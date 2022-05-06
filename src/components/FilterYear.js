@@ -1,7 +1,7 @@
 const FilterYear = (props) => {
-  const optionsHtml = props.uniqueYear.map((item) => {
+  const optionsHtml = props.uniqueYear.map((item, index) => {
     return (
-      <option value={item} key={item.id}>
+      <option value={item} key={index}>
         {item}
       </option>
     );
@@ -15,7 +15,7 @@ const FilterYear = (props) => {
     <>
       <label htmlFor='filterYear'>Year</label>
       <select name='filterYear' id='filterYear' onChange={handleChange}>
-        <option value='0'>Todos los años</option>
+        {/* <option value='0'>Todos los años</option> */}
         {optionsHtml}
       </select>
     </>
