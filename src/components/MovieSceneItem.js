@@ -15,7 +15,7 @@ const MovieSceneItem = (props) => {
           {props.movieScene.movie} - {props.movieScene.year}
         </h2>
         <p className='card__line'>{props.movieScene.full_line}</p>
-        <smal className='card__timestamp'>"{props.movieScene.timestamp}"</smal>
+        <span className='card__timestamp'>"{props.movieScene.timestamp}"</span>
         <p className='card__director'>{props.movieScene.director}</p>
       </Link>
     </div>
