@@ -4,6 +4,7 @@ import { matchPath, useLocation } from 'react-router';
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
 import MovieSceneDetail from './MovieSceneDetail';
+import MovieSceneDetailLab from './MovieSceneDetailLab';
 import MovieScene404 from './MovieScene404';
 import Order from './Order';
 import getApiData from '../services/getApiData';
@@ -50,7 +51,6 @@ function App() {
 
   useEffect(() => {
     handleOrderProperty();
-    console.log('PINTA ESTO', orderProperty);
   }, [orderProperty]);
 
   //
@@ -111,19 +111,15 @@ function App() {
   // Rutas dinámicas.
   // En "pathname" metemos la información de la url.
   const { pathname } = useLocation();
-  console.log('pathname', pathname);
 
   // Con "matchPath" obtenemos o un "null" o un objeto con bastante información, dependiendo de si la ruta actual coincide o no con la ruta dinámica.
   const dataPath = matchPath('/scene/:sceneId', pathname);
-  console.log('dataPath', dataPath);
 
   // Metemos en "sceneId" o el "id" sacado de la ruta actual, o un "null".
   const sceneId = dataPath !== null ? dataPath.params.sceneId : null;
-  console.log('sceneId', sceneId);
 
   // Buscamos la escena "item" cuyo id "item.id" coincida con el id de la url "sceneId", para recoger esa escena solamente y pasarla por props a la vista de detalle.
   const sceneFound = dataScenes.find((item) => item.id.toString() === sceneId);
-  console.log('ESCENE FOUND: ', sceneFound);
 
   return (
     <>
@@ -149,6 +145,10 @@ function App() {
           <Route
             path='/scene/:sceneId'
             element={<MovieSceneDetail sceneFound={sceneFound} />}
+          />
+          <Route
+            path='/lab'
+            element={<MovieSceneDetailLab sceneFound={sceneFound} />}
           />
           <Route path='*' element={<MovieScene404 sceneFound={sceneFound} />} />
         </Routes>
