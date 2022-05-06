@@ -1,0 +1,43 @@
+@import '../core/Normalize';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+
+.card {
+  width: 240rem;
+  padding: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f4f4f4;
+  border-radius: 8rem;
+  margin: 20rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 200rem;
+    border-radius: 4rem;
+    margin-bottom: 10rem;
+  }
+
+  &__title {
+    font-size: 20rem;
+    margin-bottom: 10rem;
+  }
+
+  &__line {
+    font-size: 16rem;
+    color: rgb(29, 89, 255);
+    margin-bottom: 10rem;
+  }
+  &__timestamp {
+    font-size: 12rem;
+    color: #999;
+  }
+}
