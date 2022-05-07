@@ -114,18 +114,11 @@ class MovieSceneDetail extends Component {
   html = (
     <>
       <Link to={'/'}>
-        <h1>Hola tusha ^^</h1>
+        <h1>Hola tusha ^^ - ¿Volvemos?</h1>
       </Link>
       <div id='Render' className='App'></div>
       <h1>id {this.props.sceneFound.id}</h1>
       <h1>movie {this.props.sceneFound.movie}</h1>
-      <h1>director {this.props.sceneFound.director}</h1>
-      <h1>year {this.props.sceneFound.year}</h1>
-      <h1>character {this.props.sceneFound.character}</h1>
-      <h1>poster {this.props.sceneFound.poster}</h1>
-      <h1>audio {this.props.sceneFound.audio}</h1>
-      <h1>full_line {this.props.sceneFound.full_line}</h1>
-      <h1>timestamp {this.props.sceneFound.timestamp}</h1>
     </>
   );
 

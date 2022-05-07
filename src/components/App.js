@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { matchPath, useLocation } from 'react-router';
 import Filters from './Filters';
 import MovieSceneList from './MovieSceneList';
-import MovieSceneDetail from './MovieSceneDetail';
-import MovieSceneDetailLab from './MovieSceneDetailLab';
+// import MovieSceneDetail from './MovieSceneDetail';
+import MovieSceneDetailIf from './MovieSceneDetailIf';
 import MovieScene404 from './MovieScene404';
 import Order from './Order';
 import getApiData from '../services/getApiData';
@@ -144,7 +144,7 @@ function App() {
           />
           <Route
             path='/scene/:sceneId'
-            element={<MovieSceneDetail sceneFound={sceneFound} />}
+            element={<MovieSceneDetailIf sceneFound={sceneFound} />}
           />
 
           <Route path='*' element={<MovieScene404 />} />
