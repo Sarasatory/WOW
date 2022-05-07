@@ -146,11 +146,8 @@ function App() {
             path='/scene/:sceneId'
             element={<MovieSceneDetail sceneFound={sceneFound} />}
           />
-          <Route
-            path='/lab'
-            element={<MovieSceneDetailLab sceneFound={sceneFound} />}
-          />
-          <Route path='*' element={<MovieScene404 sceneFound={sceneFound} />} />
+
+          <Route path='*' element={<MovieScene404 />} />
         </Routes>
       </div>
     </>

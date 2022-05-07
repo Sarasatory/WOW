@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from '../services/OrbitControls';
 
-let scene, camera, renderer, cube;
+// import './App.css';
 
+let scene, camera, renderer, cube;
 class MovieSceneDetailLab extends Component {
-  constructor(props) {
-    super(props);
+  constructor(propsConstructor) {
+    super(propsConstructor);
     this.animate = this.animate.bind(this);
   }
 
@@ -28,10 +29,10 @@ class MovieSceneDetailLab extends Component {
     //document.body.appendChild(renderer.domElement);
 
     //add geometry
-    var geometry = new THREE.BoxGeometry();
+    var geometry = new THREE.BoxGeometry(3, 4, 0.05);
     var material = new THREE.MeshBasicMaterial({
-      color: 0x00ff00,
-      wireframe: true,
+      color: 0xeeeeee,
+      wireframe: false,
     });
     cube = new THREE.Mesh(geometry, material);
 
@@ -64,8 +65,9 @@ class MovieSceneDetailLab extends Component {
     return (
       <>
         <Link to={'/'}>
-          <p>hola</p>
+          <h1>Hola tusha ^^</h1>
         </Link>
+        <h1>Props: {this.props.sceneFound}</h1>
         <div id='Render' className='App'></div>
         <p>hola</p>
       </>
