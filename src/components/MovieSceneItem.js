@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom';
-import '../styles/components/movieSceneItem.scss';
+
+import '../styles/components/MovieSceneItem.scss';
 
 const MovieSceneItem = (props) => {
   return (
-    <div className='card'>
+    <article className='card'>
       <Link to={`/scene/${props.movieScene.id}`}>
         <img
           className='card__img'
           src={props.movieScene.poster}
           alt={props.movieScene.movie}
         />
-        <h2 className='card__title'>ID: {props.movieScene.id}</h2>
-        <h2 className='card__title'>
-          {props.movieScene.movie} - {props.movieScene.year}
-        </h2>
+
+        <h2 className='card__title'>{props.movieScene.movie}</h2>
+        <p className='card__director'>{props.movieScene.director}</p>
+        <p className='card__year'>{props.movieScene.year}</p>
         <p className='card__line'>{props.movieScene.full_line}</p>
         <span className='card__timestamp'>"{props.movieScene.timestamp}"</span>
-        <p className='card__director'>{props.movieScene.director}</p>
       </Link>
-    </div>
+    </article>
   );
 };
 

@@ -4,40 +4,58 @@
 @import '../core/Global';
 
 .card {
-  width: 240rem;
-  padding: 20rem;
+  width: 300rem;
+  padding: 50rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background-color: #f4f4f4;
+  background: linear-gradient(180deg, #181818 0%, #000000 100%);
   border-radius: 8rem;
-  margin: 20rem;
+
+  @media (min-width: $break_point_tablet) {
+    width: 220rem;
+    padding: 16rem;
+  }
 
   &:hover {
     cursor: pointer;
   }
 
   &__img {
-    width: 200rem;
+    width: 100%;
     border-radius: 4rem;
     margin-bottom: 10rem;
   }
 
   &__title {
-    font-size: 20rem;
+    font-size: 24rem;
+    font-weight: $font_w_black;
+    margin-bottom: 10rem;
+  }
+
+  &__director {
+    font-size: 18rem;
+    font-weight: $font_w_medium;
+    margin-bottom: 10rem;
+  }
+
+  &__year {
+    font-size: 16rem;
+    font-weight: $font_w_medium;
     margin-bottom: 10rem;
   }
 
   &__line {
-    font-size: 16rem;
-    color: rgb(29, 89, 255);
+    font-size: 14rem;
+    font-weight: $font_w_medium;
     margin-bottom: 10rem;
   }
+
   &__timestamp {
     font-size: 12rem;
-    color: #999;
+    font-weight: $font_w_regular;
   }
 }

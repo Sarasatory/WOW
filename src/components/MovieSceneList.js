@@ -1,14 +1,19 @@
 import MovieSceneItem from './MovieSceneItem';
 
+import '../styles/components/MovieSceneList.scss';
+
 const MovieSceneList = (props) => {
   let movSceItem = '';
 
   if (props.sceneFilters.length === 0) {
     movSceItem = (
-      <li>
-        <h1>Hola</h1>
-        <h2>Nada que ver</h2>
-        <p>Haz esto todo lo complejo que quieras</p>
+      <li className='movie-scene-lost'>
+        <div className='movie-scene-lost__container'>
+          <h1 className='movie-scene-lost__container__title'>W...hoops!</h1>
+          <p className='movie-scene-lost__container__subtitle'>
+            There are no results for this search
+          </p>
+        </div>
       </li>
     );
   } else {
@@ -22,8 +27,8 @@ const MovieSceneList = (props) => {
   }
 
   return (
-    <section>
-      <ul>{movSceItem}</ul>
+    <section className='movie-scene-list'>
+      <ul className='movie-scene-list__ul'>{movSceItem}</ul>
     </section>
   );
 };

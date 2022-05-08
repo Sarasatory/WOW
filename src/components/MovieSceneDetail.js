@@ -1,33 +1,13 @@
-// import { Link } from 'react-router-dom';
-
-// const MovieSceneDetail = (props) => {
-//   let html = '';
-
-//   if (!props.sceneFound) {
-//     html = <h1>Está la cosa chunga, no hay nada aquí :o</h1>;
-//   } else {
-//     html = (
-//       <Link to={'/'}>
-//         <h1>Hola tusha ^^</h1>
-//         <h1>{props.sceneFound.id}</h1>
-//       </Link>
-//     );
-//   }
-
-//   return <>{html}</>;
-// };
-// export default MovieSceneDetail;
-
-//
-//
-// **************
-//
-//
-
-import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from '../services/OrbitControls';
+
+import HeaderLittle from './HeaderLittle';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+
+import '../styles/components/MovieSceneDetail.scss';
 
 // import './App.css';
 
@@ -43,7 +23,7 @@ class MovieSceneDetail extends Component {
     scene = new THREE.Scene();
 
     // Color
-    scene.background = new THREE.Color(0xf4f6f8);
+    // scene.background = new THREE.Color(0x000000);
 
     // Imagen de fondo - No me funciona, pero no sé porqué :(
     // let loaderBG = new THREE.TextureLoader();
@@ -59,11 +39,11 @@ class MovieSceneDetail extends Component {
 
     //renderer
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth / 3, window.innerHeight / 2);
     //document.body.appendChild(renderer.domElement);
 
     //add geometry
-    var geometry = new THREE.BoxGeometry(3, 5, 0.05);
+    var geometry = new THREE.BoxGeometry(3.76, 3.84, 0.03);
 
     let texture = THREE.ImageUtils.loadTexture(
       this.props.sceneFound.poster,
@@ -113,12 +93,42 @@ class MovieSceneDetail extends Component {
 
   html = (
     <>
-      <Link to={'/'}>
-        <h1>Hola tusha ^^ - ¿Volvemos?</h1>
-      </Link>
-      <div id='Render' className='App'></div>
-      <h1>id {this.props.sceneFound.id}</h1>
-      <h1>movie {this.props.sceneFound.movie}</h1>
+      <HeaderLittle />
+
+      <section className='movie-scene-detail'>
+        <div className='msd-container'>
+          <div id='Render' className='App msd-container__render'></div>
+
+          <div className='msd-container__info'>
+            <h1 className='msd-container__info__title'>
+              {this.props.sceneFound.movie} - ({this.props.sceneFound.character}
+              )
+            </h1>
+            <p className='msd-container__info__director'>
+              {this.props.sceneFound.director}
+            </p>
+            <p className='msd-container__info__year'>
+              {this.props.sceneFound.year}
+            </p>
+            <a href={this.props.sceneFound.audio} target='_blank'>
+              <div className='msd-container__info__audio'>
+                <FontAwesomeIcon
+                  icon={faCirclePlay}
+                  className='msd-container__info__audio__icon'
+                />
+                <div className='msd-containe__infor__audio__text'>
+                  <p className='msd-container__info__audio__text__line'>
+                    {this.props.sceneFound.full_line}
+                  </p>
+                  <span className='msd-container__audio__text__timestamp'>
+                    {this.props.sceneFound.timestamp}
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 

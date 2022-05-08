@@ -1,0 +1,77 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+
+.movie-scene-lost {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  justify-content: center;
+
+  @media (min-width: $break_point_tablet) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  @media (min-width: $break_point_desktop) {
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  &__container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+      font-size: 60rem;
+      @media (min-width: $break_point_tablet) {
+        font-size: 120rem;
+      }
+      @media (min-width: $break_point_desktop) {
+        font-size: 180rem;
+      }
+    }
+    &__subtitle {
+      font-size: 20rem;
+      @media (min-width: $break_point_tablet) {
+        font-size: 30rem;
+      }
+      @media (min-width: $break_point_desktop) {
+        font-size: 40rem;
+      }
+    }
+  }
+}
+
+.movie-scene-list {
+  display: flex;
+  justify-content: center;
+
+  &__ul {
+    width: 100%;
+    padding: 50rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 30rem;
+
+    @media (min-width: $break_point_tablet) {
+      max-width: $max-width-tablet;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $break_point_desktop) {
+      max-width: $max-width-desktop;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+.order {
+  width: 100%;
+  max-width: 300rem;
+
+  .input-icon-container {
+    position: relative;
+  }
+
+  .filter-select {
+    width: 100%;
+    max-width: 300rem;
+    height: 48rem;
+    padding: 10rem;
+
+    color: $col_white;
+
+    border: 1px solid #c4c4c4;
+    background-color: rgba(255, 255, 255, 0.01);
+    border-radius: 4rem;
+    &:focus {
+      border: 1px solid $col_action;
+    }
+
+    &:hover {
+      background-color: $col_black;
+      border: 1px solid $col_action;
+    }
+
+    @media (min-width: $break_point_tablet) {
+      max-width: 300rem;
+    }
+  }
+}

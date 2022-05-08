@@ -1,0 +1,38 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+.filter-movie {
+  width: 100%;
+  max-width: 300rem;
+  .input-icon-container {
+    position: relative;
+  }
+  .content-icon {
+    position: absolute;
+    top: 16rem;
+    left: 16rem;
+
+    font-size: 16rem;
+  }
+
+  .filter-input {
+    width: 100%;
+    max-width: 300rem;
+    height: 48rem;
+    padding: 10rem 10rem 10rem 46rem;
+
+    color: $col_white;
+
+    border: 1px solid #c4c4c4;
+    background-color: rgba(255, 255, 255, 0.01);
+    border-radius: 4rem;
+    &:focus {
+      border: 1px solid $col_action;
+    }
+
+    @media (min-width: $break_point_tablet) {
+      max-width: 300rem;
+    }
+  }
+}

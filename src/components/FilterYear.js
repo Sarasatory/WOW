@@ -1,3 +1,5 @@
+import '../styles/components/FilterYear.scss';
+
 const FilterYear = (props) => {
   const optionsHtml = props.uniqueYear.map((item, index) => {
     return (
@@ -12,13 +14,21 @@ const FilterYear = (props) => {
   };
 
   return (
-    <>
-      <label htmlFor='filterYear'>Year</label>
-      <select name='filterYear' id='filterYear' onChange={handleChange}>
-        {/* <option value='0'>Todos los años</option> */}
-        {optionsHtml}
-      </select>
-    </>
+    <div className='filter-year'>
+      <div className='input-icon-container'>
+        <select
+          className='filter-movie filter-select'
+          name='filterYear'
+          id='filterYear'
+          onChange={handleChange}
+        >
+          <option value='0' selected>
+            All years
+          </option>
+          {optionsHtml}
+        </select>
+      </div>
+    </div>
   );
 };
 export default FilterYear;

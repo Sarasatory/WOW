@@ -1,0 +1,41 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+
+.header-little {
+  position: relative;
+
+  width: 100%;
+  height: 350rem;
+
+  background: linear-gradient(180deg, #3c3f41 0%, #000000 100%);
+
+  .back {
+    position: absolute;
+    top: 50rem;
+    left: 50rem;
+
+    width: 180rem;
+    height: 130rem;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    &__icon {
+      font-size: 32rem;
+    }
+
+    &__img {
+      width: 130rem;
+      height: 130rem;
+      border-radius: 4rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

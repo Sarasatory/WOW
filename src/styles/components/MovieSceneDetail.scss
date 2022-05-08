@@ -1,0 +1,101 @@
+@import '../core/Normalize';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+
+.movie-scene-detail {
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0 50rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $col_black;
+
+  .msd-container {
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    gap: 30rem;
+
+    // background: linear-gradient(180deg, #181818 0%, #000000 100%);
+
+    @media (min-width: $break_point_tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__render {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (min-width: $break_point_tablet) {
+        justify-content: flex-end;
+      }
+    }
+
+    &__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      @media (min-width: $break_point_tablet) {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      &__title {
+        font-size: 30rem;
+        font-weight: $font_w_black;
+        margin-bottom: 10rem;
+      }
+
+      &__director {
+        font-size: 24rem;
+        font-weight: $font_w_medium;
+        margin-bottom: 10rem;
+      }
+
+      &__year {
+        font-size: 20rem;
+        font-weight: $font_w_medium;
+        margin-bottom: 10rem;
+      }
+      &__audio {
+        padding: 20rem 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30rem;
+
+        &__text {
+          &__line {
+            font-size: 18rem;
+            font-weight: $font_w_medium;
+            margin-bottom: 5rem;
+          }
+          &__timestamp {
+            font-size: 14rem;
+            font-weight: $font_w_regular;
+          }
+        }
+        &__icon {
+          font-size: 64rem;
+          color: $col_action;
+        }
+      }
+    }
+  }
+}

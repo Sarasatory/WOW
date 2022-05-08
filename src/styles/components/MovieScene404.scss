@@ -1,0 +1,206 @@
+@import '../core/Normalize.scss';
+@import '../core/Reset';
+@import '../core/Variables';
+@import '../core/Global';
+
+.page404 {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: $break_point_tablet) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $break_point_desktop) {
+    }
+
+    &__letter-w {
+      position: relative;
+
+      font-size: 150rem;
+      font-weight: $font_w_black;
+
+      color: $col_white_02;
+      @media (min-width: $break_point_tablet) {
+        font-size: 220rem;
+      }
+
+      @media (min-width: $break_point_desktop) {
+        font-size: 300rem;
+      }
+
+      &__l4tl {
+        position: absolute;
+        bottom: 0;
+        left: 30rem;
+
+        font-size: 150rem;
+        font-weight: $font_w_black;
+
+        color: $col_white_08;
+
+        animation-name: move-l4tl;
+        animation-duration: 600ms;
+        animation-delay: 200ms;
+        animation-direction: normal;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+        @media (min-width: $break_point_tablet) {
+          font-size: 220rem;
+          bottom: -600rem;
+          animation-name: move-l4tl-tablet;
+        }
+
+        @media (min-width: $break_point_desktop) {
+          left: 40rem;
+          font-size: 300rem;
+        }
+      }
+
+      &__l4br {
+        position: absolute;
+        top: 0;
+        right: 70rem;
+
+        font-size: 150rem;
+        font-weight: $font_w_black;
+
+        color: $col_white_08;
+
+        animation-name: move-l4br;
+        animation-duration: 600ms;
+        animation-delay: 200ms;
+        animation-direction: normal;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+        @media (min-width: $break_point_tablet) {
+          font-size: 220rem;
+          top: -600rem;
+          animation-name: move-l4br-tablet;
+        }
+
+        @media (min-width: $break_point_desktop) {
+          left: 40rem;
+          font-size: 300rem;
+        }
+      }
+    }
+
+    @keyframes move-l4tl {
+      0% {
+        top: 0;
+        left: -300rem;
+      }
+
+      100% {
+        top: 0;
+        left: 20rem;
+      }
+    }
+
+    @keyframes move-l4tl-tablet {
+      0% {
+        bottom: -600rem;
+      }
+
+      100% {
+        bottom: 0;
+      }
+    }
+
+    @keyframes move-l4br {
+      0% {
+        top: 0;
+        right: -300rem;
+      }
+
+      100% {
+        top: 0;
+        right: 48rem;
+      }
+    }
+
+    @keyframes move-l4br-tablet {
+      0% {
+        top: -600rem;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    &__letter-o {
+      font-size: 150rem;
+      font-weight: $font_w_black;
+      color: $col_white_02;
+
+      animation-name: color-lo;
+      animation-duration: 600ms;
+      animation-delay: 200ms;
+      animation-direction: normal;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+      @media (min-width: $break_point_tablet) {
+        font-size: 220rem;
+      }
+      @media (min-width: $break_point_desktop) {
+        margin-left: 10rem;
+        font-size: 300rem;
+      }
+    }
+
+    &__span-text {
+      width: 100%;
+      font-size: 20rem;
+      font-weight: $font_w_black;
+      color: $col_white_02;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      animation-name: color-lo;
+      animation-duration: 600ms;
+      animation-delay: 200ms;
+      animation-direction: normal;
+      animation-timing-function: ease-in;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+
+      @media (min-width: $break_point_tablet) {
+        font-size: 25rem;
+      }
+      @media (min-width: $break_point_desktop) {
+        margin-left: 10rem;
+        font-size: 30rem;
+      }
+    }
+
+    @keyframes color-lo {
+      0% {
+        color: $col_white_02;
+      }
+
+      100% {
+        color: $col_white_08;
+      }
+    }
+  }
+}
