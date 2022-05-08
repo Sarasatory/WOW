@@ -64,7 +64,7 @@ El enunciado nos fue entregado el miércoles a las 14:00 h. Como viene siendo ha
 - Chrome
 - Figma
 
-### Notas y conclusiones
+### Notas
 
 Este ejercicio ha sido tal vez el más complicado hasta la fecha. No por la parte del ejercicio en sí, ya que React JS se ha ido haciendo cada vez más amigable para mí, y la comprensión del mismo está siendo también cada vez más firme. Sino por el uso de Threejs.
 
